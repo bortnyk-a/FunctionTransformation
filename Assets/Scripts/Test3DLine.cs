@@ -97,11 +97,11 @@ public class Test3DLine : MonoBehaviour
         var controller= GameObject.Find("Controller");
         grid.transform.parent = controller.transform;
         graph.transform.parent = controller.transform;
-        graph.transform.localPosition = new Vector3(0,0,-0.1f);
+        graph.transform.localPosition = new Vector3(0,0,-0.01f);
         xo.transform.parent = controller.transform;
         yo.transform.parent = controller.transform;
-        xo.transform.localPosition = new Vector3(0, 0, -0.1f);
-        yo.transform.localPosition = new Vector3(0, 0, -0.1f);
+        xo.transform.localPosition = new Vector3(0, 0, -0.01f);
+        yo.transform.localPosition = new Vector3(0, 0, -0.01f);
         grid.transform.localPosition = new Vector3(0, 0, 0);
 
 
