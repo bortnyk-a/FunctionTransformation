@@ -41,26 +41,41 @@ public class Test3DLine : MonoBehaviour
         A = 1;
         B = 0;
         C = 0;
-        // A_Slider.value = A;
-        // B_slider.value = B;
-        // C_slider.value = C;
-        Number_Slider.value = numberOfLines;
+        // // A_Slider.value = A;
+        // // B_slider.value = B;
+        // // C_slider.value = C;
+        // Number_Slider.value = numberOfLines;
         gridPoints = new List<Vector3>();
         splinePoints = new List<Vector3>();
         XOY_Points = new List<Vector3>();
         colorGrid = Color.white;
         colorSpline = Color.red;
         colorXOY = Color.white;
-        VectorLine.SetCamera3D(CameraMain);
+        //VectorLine.SetCamera3D(CameraMain);
         VectorLine.SetEndCap("arrow", EndCap.Both, 0, -3, -3, 3, lineTex, frontTex, frontTex);
-        CreateGridList();
-        Created_XOY_Line();
-        CreatedSplineList();
+
         Grid = new VectorLine("Grid", gridPoints, lineWidth * distanceBetweenLines);
         XOY_Line = new VectorLine("XOY_Line", XOY_Points, 8 * lineWidth * distanceBetweenLines);
         Spline = new VectorLine("Spline", splinePoints, 10 * lineWidth * distanceBetweenLines, LineType.Continuous);
-        SetDraw();
-        SetColorWhite();
+        CreateGridList();
+        Created_XOY_Line();
+        CreatedSplineList();
+        //Grid.Draw3D();
+        //XOY_Line.Draw3D();
+        //Spline.Draw3D();
+        //SetDraw();
+         SetColorWhite();
+        var grid = GameObject.Find("Grid");
+        var graph = GameObject.Find("Spline");
+        var xoy = GameObject.Find("XOY_Line");
+
+        var controller = GameObject.Find("Controller");
+        grid.transform.parent = controller.transform;
+        graph.transform.parent = controller.transform;
+        graph.transform.localPosition = new Vector3(0, 0, -0.015f);
+        xoy.transform.parent = controller.transform;
+        xoy.transform.localPosition = new Vector3(0, 0, -0.01f);
+        grid.transform.localPosition = new Vector3(0, 0, 0);
 
     }
 
@@ -127,23 +142,13 @@ public class Test3DLine : MonoBehaviour
         XOY_Line.endCap = "arrow";
         XOY_Line.Draw3D();
 
-        Spline.joins = Joins.Fill;
+       // Spline.joins = Joins.Fill;
         Spline.SetColor(colorSpline);
         Spline.endCap = "arrow";
 
         Spline.Draw3D();
 
-        var grid = GameObject.Find("Grid");
-        var graph = GameObject.Find("Spline");
-        var xoy = GameObject.Find("XOY_Line");
 
-        var controller = GameObject.Find("Controller");
-        grid.transform.parent = controller.transform;
-        graph.transform.parent = controller.transform;
-        graph.transform.localPosition = new Vector3(0, 0, -0.015f);
-        xoy.transform.parent = controller.transform;
-        xoy.transform.localPosition = new Vector3(0, 0, -0.01f);
-        grid.transform.localPosition = new Vector3(0, 0, 0);
     }
     public void CreatedSplineList()
     {

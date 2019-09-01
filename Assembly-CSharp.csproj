@@ -62,8 +62,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Common\CommonData.cs" />
+    <Compile Include="Assets\Scripts\Common\MainManager.cs" />
+    <Compile Include="Assets\Scripts\Common\PrefabList.cs" />
+    <Compile Include="Assets\Scripts\Database\DBStruct.cs" />
+    <Compile Include="Assets\Scripts\DrawGraph.cs" />
+    <Compile Include="Assets\Scripts\Menu\BaseMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\BasicDialogGUI.cs" />
+    <Compile Include="Assets\Scripts\Menu\GUIButton.cs" />
+    <Compile Include="Assets\Scripts\Menu\MainMenuGUI.cs" />
+    <Compile Include="Assets\Scripts\Menu\X__2_GUI.cs" />
+    <Compile Include="Assets\Scripts\States\BaseState.cs" />
+    <Compile Include="Assets\Scripts\States\BasicDialog.cs" />
+    <Compile Include="Assets\Scripts\States\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\States\StateManager.cs" />
+    <Compile Include="Assets\Scripts\States\X__2.cs" />
+    <Compile Include="Assets\Scripts\StringConstants.cs" />
     <Compile Include="Assets\Scripts\Test3DLine.cs" />
     <Compile Include="Assets\Scripts\TestURL.cs" />
+    <Compile Include="Assets\Scripts\UserJT\UserJT.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
