@@ -26,7 +26,10 @@ namespace UnityEngine.XR.iOS
             }
             return false;
         }
-
+        private void Start()
+        {
+            isPlace=false;
+        }
         // Update is called once per frame
         void Update()
         {
@@ -51,9 +54,9 @@ namespace UnityEngine.XR.iOS
                 CommonData.stateManager.PushState(new States.MainMenu());
             }
 #else
-			if (!isPlace&&Input.touchCount > 0 && m_HitTransform != null)
+			if (!isPlace && Input.touchCount > 0 && m_HitTransform != null)
 			{
-                isPlace = true;
+                
 				var touch = Input.GetTouch(0);
 				if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
 				{
@@ -78,6 +81,8 @@ namespace UnityEngine.XR.iOS
                     {
                         if (HitTestWithResultType (point, resultType))
                         {
+                            isPlace = true;
+                            CommonData.stateManager.PushState(new States.MainMenu());
                             return;
                         }
                     }
